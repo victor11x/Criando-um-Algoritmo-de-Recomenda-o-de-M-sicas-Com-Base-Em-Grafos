@@ -126,7 +126,7 @@ LIMIT 10;`
   <img src="image/resultado_recomendacao_user.png" width="400"/>
 </p>
 
-
+* Legenda da imagem: circulo verde representa usúario | laranja representa as músicas inter-ligadas e com usuario 
 
 ##
 👨‍💻 Autor
