@@ -76,6 +76,42 @@ Fonte de Dados:
 Carregados via LOAD CSV e Processamento em batch.
 
 
+#🧠 Machine Learning com Grafos (KNN)
+Criação do Grafo em Memória
+
+Um grafo temporário é criado no Graph Data Science contendo apenas nós Music e suas features numéricas:
+```
+CALL gds.graph.project(
+  'musicGraph',
+  'Music',
+  '*',
+  {
+    nodeProperties: ['danceability', 'energy','tempo']
+  }
+);
+```
+
+# Cálculo de Similaridade (KNN)
+
+O algoritmo K-Nearest Neighbors calcula a similaridade entre músicas com base em seus vetores de características.
+```
+CALL gds.knn.write(
+  'musicGraph',
+  {
+    nodeProperties: ['danceability', 'energy', 'tempo'],
+    topK: 5,
+    similarityCutoff: 0.85,
+    writeRelationshipType: 'SIMILAR_TO',
+    writeProperty: 'score'
+  }
+);
+
+```
+📌 Resultado: Cada música é conectada às 5 mais similares; Apenas relações com similaridade ≥ 0.85; Score de similaridade gravado na relação
+
+
+
+
 # 👤 Recomendação Personalizada por Usuário
 
 Com base no histórico de escuta do usuário, o sistema recomenda músicas similares às já ouvidas.
