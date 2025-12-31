@@ -36,7 +36,6 @@ Histórico de escuta do usuário
   <img src="image/grafo_recomendacao.png" width="400"/>
 </p>
 
-## 
 
 Relacionamentos:
 
@@ -53,8 +52,7 @@ Relacionamentos:
 (User)-[:LIKED]->(Music)
 
 
-## 
-🔐 Constraints e Qualidade dos Dados
+# 🔐 Constraints e Qualidade dos Dados
 
 Foram criadas constraints de unicidade para garantir integridade e performance:
 
@@ -68,7 +66,8 @@ User.id
 
 Isso evita duplicidade de nós e melhora a execução de queries.
 
-##
+
+
 # 📥 Ingestão de Dados
 Fonte de Dados:
 #### 1- Dataset público inspirado em dados do Spotify link da fonte: "https://www.kaggle.com/datasets/amitanshjoshi/spotify-1million-tracks"
@@ -76,7 +75,7 @@ Fonte de Dados:
 
 Carregados via LOAD CSV e Processamento em batch.
 
-##
+
 # 👤 Recomendação Personalizada por Usuário
 
 Com base no histórico de escuta do usuário, o sistema recomenda músicas similares às já ouvidas.
